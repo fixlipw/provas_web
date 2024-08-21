@@ -1,0 +1,111 @@
+Props Drilling se resume ao processo de passar propriedades para um componente
+que está várias camadas abaixo na hierarquia dos componentes
+
+Exemplo de Props Drilling usado em sala:
+
+    const CompA = () => {
+
+        const varA = "Alguma coisa"
+
+        return (
+            <div>
+                <CompB varA= {varA}/>
+                <CompC varA= {varA}/>
+            </div>
+        )
+    }
+
+    const CompB = ({varA}) => {
+        return (
+            <div>
+                <h3>B: {varA}</h3>
+            </div>
+        )
+    }
+
+    const CompC = ({varA}) => {
+        return (
+            <div>
+                <CompD varA = {varA}/>
+            </div>
+        )
+    }
+
+    const CompD = ({varA}) => {
+        return (
+            <div>
+                <CompE varA = {varA}/>
+            </div>
+        )
+    }
+
+    const CompE = ({varA}) => {
+        return (
+            <div>
+                <h3>E: {varA}</h3>
+            </div>
+        )
+    }
+
+No exemplo, a variável "varA" tem como destino "CompB" e "CompE". Para a propriedade
+chegar em "Comp E", "perfurar" as "CompC" e "CompD".
+
+O uso de contextos pode resolver facilmente essa questão, pois podemos prover
+propriedades diretamente para o componente no qual queremos usar tais propriedades.
+
+Exemplo de Contextos usados em sala:
+
+    import {createContext, useContext} from "react";
+
+    const Variable = createContext("")
+
+    const CompA = () => {
+
+        const varA = "Alguma coisa"
+
+        return (
+            <div>
+                <Variable.Provider value={varA}>
+                    <CompB />
+                    <CompC />
+                </Variable.Provider>
+            </div>
+        )
+    }
+
+    const CompB = () => {
+        const varB = useContext(Variable)
+        return (
+            <div>
+                <h3>B: {varB}</h3>
+            </div>
+        )
+    }
+
+    const CompC = () => {
+        return (
+            <div>
+                <CompD />
+            </div>
+        )
+    }
+
+    const CompD = () => {
+        return (
+            <div>
+                <CompE />
+            </div>
+        )
+    }
+
+    const CompE = () => {
+        const varE = useContext(Variable)
+        return (
+            <div>
+                <h3>E: {varE}</h3>
+            </div>
+        )
+    }
+
+Com o uso da variável de contexto, podemos prover as propriedades desejadas diretamente
+para o componente que precisa das propriedades, sem ser preciso perfurar componentes abaixo.

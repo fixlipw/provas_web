@@ -38,6 +38,22 @@ const professores = [
         titulacao: "DOUTORADO",
         interesses: {es: false, lc: false, mc: false},
         universidade: {ufc: true, ifce: false}
+    },
+    {
+        id: 5,
+        nome: "Rainara Maia",
+        curso: "SI",
+        titulacao: "DOUTORADO",
+        interesses: {es: true, lc: false, mc: false},
+        universidade: {ufc: true, ifce: false}
+    },
+    {
+        id: 6,
+        nome: "Diana Braga",
+        curso: "ES",
+        titulacao: "MESTRADO",
+        interesses: {es: true, lc: false, mc: false},
+        universidade: {ufc: true, ifce: false}
     }
 ]
 
@@ -46,7 +62,7 @@ const alunos = [
         id: 0,
         nome: "Felipe de Sousa",
         curso: "Sistemas de Informação",
-        ira: 7.7
+        ira: 8.8
     },
     {
         id: 1,
@@ -62,9 +78,33 @@ const alunos = [
     },
     {
         id: 3,
-        nome: "Iara da Silva Lima",
+        nome: "Iara Lima",
         curso: "Sistemas de Informação",
         ira: 8.8
+    },
+    {
+        id: 4,
+        nome: "Jorge Bezerra",
+        curso: "Ciência da Computação",
+        ira: 6.8
+    },
+    {
+        id: 5,
+        nome: "Ana Maia",
+        curso: "Design Digital",
+        ira: 7.8
+    },
+    {
+        id: 6,
+        nome: "Rui Fonseca",
+        curso: "Redes de Computadores",
+        ira: 5.3
+    },
+    {
+        id: 7,
+        nome: "Téo Costa",
+        curso: "Sistemas de Informação",
+        ira: 7.0
     }
 ]
 

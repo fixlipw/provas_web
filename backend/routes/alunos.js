@@ -29,4 +29,9 @@ router.delete("/apagar/:id", (request, response) => {
     response.json({"res": res});
 })
 
+router.get("/media", (request, response) => {
+    const media = AlunoService.media();
+    response.json(media);
+})
+
 module.exports = router;

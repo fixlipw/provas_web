@@ -52,6 +52,20 @@ class AlunoService {
         return false;
     }
 
+    static media() {
+        let media = 0
+
+        for (let i = 0; i < alunos.length; i++) {
+            media += alunos[i].ira;
+        }
+
+        if (media > 0) {
+            return (media / alunos.length).toFixed(3);
+        }
+
+        return 0;
+    }
+
 }
 
 module.exports = AlunoService;

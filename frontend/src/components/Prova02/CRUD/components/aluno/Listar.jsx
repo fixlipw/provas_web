@@ -6,7 +6,9 @@ import {Link} from "react-router-dom";
 const Listar = () => {
 
     const [alunos, setAlunos] = useState([]);
+    //estado para guardar a média de IRA's
     const [media, setMedia] = useState(0);
+    //estado para definir se a linha será colorida ou não
     const [colored, setColored] = useState(false);
 
     useEffect(() => {
@@ -14,10 +16,12 @@ const Listar = () => {
         AlunoService.media((json) => setMedia(json))
     }, [])
 
+    //função para controlar o botão de mudança de cor
     const handleColorir = () => {
         setColored(!colored);
     }
 
+    //função para mudar a classe css das linhas da tabela
     const getClass = (ira) => {
         if (!colored) return "aluno";
         return ira < media ? "table-danger" : "table-info";
@@ -73,6 +77,7 @@ const Listar = () => {
                 <tbody>
                 {renderizarAlunos()}
                 <tr>
+                    {/*linha da tabela com a média de IRA's*/}
                     <th scope="row">Média IRA</th>
                     <td>-----</td>
                     <td>-----</td>

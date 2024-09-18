@@ -29,6 +29,8 @@ router.delete("/apagar/:id", (request, response) => {
     response.json({"res": res});
 })
 
+
+//Rota criada para retorno do cálculo da média
 router.get("/media", (request, response) => {
     const media = AlunoService.media();
     response.json(media);

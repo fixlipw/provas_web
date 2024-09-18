@@ -4,10 +4,10 @@ const url = "http://localhost:3002/alunos/"
 
 class AlunoService {
 
-    static getAlunos = async data => {
+    static getAlunos = async callback => {
         try {
             const response = await axios.get(url + "listar");
-            data(response.data);
+            callback(response.data);
         } catch (error) {
             console.log(error);
         }
@@ -50,6 +50,14 @@ class AlunoService {
         }
     }
 
+    static media = async callback => {
+        try {
+            const response = await axios.get(url + "media");
+            callback(response.data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 export default AlunoService;

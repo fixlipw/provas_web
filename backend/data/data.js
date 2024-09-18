@@ -105,6 +105,24 @@ const alunos = [
         nome: "Téo Costa",
         curso: "Sistemas de Informação",
         ira: 7.0
+    },
+    {
+        id: 8,
+        nome: "Pedro Freitas",
+        curso: "Design Digital",
+        ira: 7.0
+    },
+    {
+        id: 9,
+        nome: "Joaquim Brito",
+        curso: "Rede de Computadores",
+        ira: 4.7
+    },
+    {
+        id: 10,
+        nome: "Raquel Barbosa",
+        curso: "Engenharia da Computação",
+        ira: 6.9
     }
 ]
 

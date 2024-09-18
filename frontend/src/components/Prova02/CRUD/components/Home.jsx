@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.bundle.js"
 
@@ -12,6 +11,7 @@ const home = () => {
         "professor/criar",
         "aluno/listar",
         "aluno/criar",
+        "aluno/listarPorCurso"
     ]
 
     return (
@@ -54,6 +54,11 @@ const home = () => {
                                     <li>
                                         <Link className="dropdown-item" to={routes[2]}>
                                             Listar Alunos
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="dropdown-item" to={routes[4]}>
+                                            Listar Alunos Por Curso
                                         </Link>
                                     </li>
                                     <li>

@@ -52,6 +52,8 @@ class AlunoService {
         return false;
     }
 
+
+    // Cálculo da média dos IRAs dos alunos
     static media() {
         let media = 0
 

@@ -8,6 +8,7 @@ import CriarProfessor from './components/professor/Criar.jsx';
 import ListarAluno from "./components/aluno/Listar.jsx";
 import EditarAluno from './components/aluno/Editar.jsx';
 import CriarAluno from "./components/aluno/Criar.jsx";
+import ListarCurso from "./components/aluno/ListarCurso.jsx";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
             {
                 path: "aluno/listar",
                 element: <ListarAluno />,
+            },
+            {
+                path: "aluno/listarPorCurso",
+                element: <ListarCurso />
             },
             {
                 path: "aluno/editar/:id",
